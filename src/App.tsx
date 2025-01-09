@@ -16,7 +16,7 @@ function App() {
 }
 
 export default App;  Exporta o componente App como padrão    */
-import React from 'react';
+/*import React from 'react';
 import Home from './pages/Home';
 
 const App: React.FC = () => (
@@ -24,5 +24,27 @@ const App: React.FC = () => (
     <Home />
   </div>
 );
+
+export default App;
+*/
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import About from './components/About';
+// Importe as outras páginas (Experience, Work, Contact)
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        {/* Adicione as rotas para Experience, Work, Contact */}
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
