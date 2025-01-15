@@ -28,16 +28,16 @@ const Header: React.FC = () => {
       <nav className="nav">
         <ul className="nav-links">
           <li>
-            <a href="#Home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#About">Sobre mim</a>
+            <a href="/About">About me</a>
           </li>
           <li>
-            <a href="#Projects">Projetos</a>
+            <a href="/Projects">Projects</a>
           </li>
           <li>
-            <a href="mailto:mizaelmbarreto@gmail.com" className="contact-button">Contato</a>
+            <a href="mailto:mizaelmbarreto@gmail.com">Contact</a>
           </li>
         </ul>
       </nav>

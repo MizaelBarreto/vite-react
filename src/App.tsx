@@ -32,6 +32,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './components/About';
+import Projects from './components/Projects';
 // Importe as outras páginas (Experience, Work, Contact)
 
 const App: React.FC = () => {
@@ -41,6 +42,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        
         {/* Adicione as rotas para Experience, Work, Contact */}
       </Routes>
     </Router>

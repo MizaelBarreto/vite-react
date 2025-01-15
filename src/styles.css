@@ -1,38 +1,3 @@
-/* body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f2449;
-    color: #333;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: #1d51ba;
-    color: white;
-  }
-  
-  .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .projects .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-  }
-  p,a {
-    color: aliceblue;
-  }
- h1, h2,h3{
-    color : aliceblue;
-  }
-*/
 /* Importa a fonte "Inter" */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
@@ -45,7 +10,16 @@ body {
   padding: 0;
   line-height: 1.6;
 }
-
+.git{
+  display: flex;
+  color: #8892b0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+a:hover {
+  color: #64ffda; /* Cor ao passar o mouse */
+}
 a {
   color: #64ffda; /* Cor do link */
   text-decoration: none;
@@ -63,13 +37,12 @@ header, nav, footer {
   background-color: transparent; /* Sem fundo para combinar com o design */
   width: 150px; /* Tamanho do quadrado */
   height: 150px; /* Tamanho do quadrado */
-  border: 1px solid #64ffda; /* Borda para dar o destaque semelhante ao design original */
-  border-radius: 6px; /* Arredondamento sutil */
+ 
 }
 
 .logo-image {
-  max-width: 150px; /* Tamanho máximo da imagem dentro do quadrado */
-  max-height: 150px; /* Tamanho máximo da imagem dentro do quadrado */
+  max-width: 200px; /* Tamanho máximo da imagem dentro do quadrado */
+  max-height: 200px; /* Tamanho máximo da imagem dentro do quadrado */
 }
 .resume-button {
   color: #64ffda;
@@ -131,7 +104,7 @@ header, nav, footer {
 
 /* Texto de introdução */
 .intro {
-  font-size: 16px; /* Tamanho pequeno */
+  font-size: 20px; /* Tamanho pequeno */
   color: #64ffda; /* Verde destacado */
   font-family: 'Fira Code', monospace; /* Fonte específica */
   margin-bottom: 10px; /* Espaçamento */
@@ -176,4 +149,72 @@ header, nav, footer {
 .resume-button:hover {
   background-color: #64ffda; /* Fundo verde ao passar o mouse */
   color: #0a192f; /* Texto escuro */
+}
+/* projects */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-item {
+  text-align: center;
+  background-color: #112240; /* Azul escuro */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #64ffda; /* Verde */
+  margin-bottom: 1rem;
+}
+
+.image-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.image-carousel img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #ccd6f6; /* Texto claro */
+  margin-top: 1rem;
+}
+.project-card {
+  border: 1px solid #64ffda;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #112240;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.carousel img {
+  height: 400px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccd6f6;
 }

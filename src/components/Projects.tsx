@@ -1,25 +1,42 @@
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
+
+interface Projeto {
+    id: number;
+    titulo: string;
+    descricao: string;
+    imagens: string[];
+}
 
 const Projects: React.FC = () => {
-  const projectList = [
-    { title: "Projeto 1", description: "Descrição do projeto 1." },
-    { title: "Projeto 2", description: "Descrição do projeto 2." },
-    { title: "Projeto 3", description: "Descrição do projeto 3." },
-  ];
+    const [projects, setProjects] = useState<Projeto[]>([]);
 
-  return (
-    <section id="projects" className="projects">
-      <h2>Meus Projetos</h2>
-      <div className="project-grid">
-        {projectList.map((project, index) => (
-          <div key={index} className="project-card">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+    useEffect(() => {
+        fetch('http://localhost:5000/api/projetos')
+            .then((res) => res.json())
+            .then((data) => setProjects(data))
+            .catch((error) => console.error('Erro ao buscar projetos:', error));
+    }, []);
+
+    return (
+        <section id="projects" className="projects">
+            <h2 style={{ textAlign: 'center' }}>Meus Projetos</h2>
+            <a className="git" href="https://github.com/MizaelBarreto">Clique aqui para acessar projetos via GitHub</a>
+            <div className="project-list">
+                {projects.map((project) => (
+                    <div key={project.id} className="project-card">
+                        <h3>{project.titulo}</h3>
+                        <div className="carousel">
+                            {project.imagens.map((imagem, index) => (
+                                <img key={index} src={imagem} alt={`Imagem do ${project.titulo}`} />
+                            ))}
+                        </div>
+                        <p>{project.descricao}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
 };
 
 export default Projects;
