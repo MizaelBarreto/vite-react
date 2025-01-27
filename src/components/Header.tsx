@@ -31,13 +31,13 @@ const Header: React.FC = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/About">About me</a>
+            <a href="/About">Sobre mim</a>
           </li>
           <li>
-            <a href="/Projects">Projects</a>
+            <a href="/Projects">Projetos</a>
           </li>
           <li>
-            <a href="mailto:mizaelmbarreto@gmail.com">Contact</a>
+            <a href="mailto:mizaelmbarreto@gmail.com">Contato</a>
           </li>
         </ul>
       </nav>
