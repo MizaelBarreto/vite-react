@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Projeto[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projetos")
+    fetch("http://localhost:5000/api/projetos") // Consumindo a API do servidor Node.js
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Erro ao buscar projetos:", error));
@@ -68,4 +68,3 @@ const ProjectCard: React.FC<{ project: Projeto }> = ({ project }) => {
 };
 
 export default Projects;
- 
