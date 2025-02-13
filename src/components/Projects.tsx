@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Projeto[]>([]);
 
   useEffect(() => {
-    fetch("https://portfolio-hqqg4ufui-mizaelbarretos-projects.vercel.app/api/projetos")
+    fetch("https://portfolio-api-hazel-omega.vercel.app/api/projetos")
       .then((res) => res.json())
       .then((data) => {
         console.log("Dados recebidos:", data); // Verifique se os dados estão corretos
