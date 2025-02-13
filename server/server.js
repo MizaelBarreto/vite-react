@@ -14,8 +14,11 @@ const supabase = createClient(
   process.env.SUPABASE_HOST, 
   process.env.SUPABASE_SERVICE_ROLE
 );
-
-app.use(cors());
+app.use(cors({
+  origin: "https://portfoliomizaelbarreto.vercel.app", // Substitua pelo domínio do seu site React
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(bodyParser.json());
 
 // Rota para obter projetos do Supabase

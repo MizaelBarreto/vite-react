@@ -11,9 +11,12 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Projeto[]>([]);
 
   useEffect(() => {
-    fetch("https://portfolio-hqqg4ufui-mizaelbarretos-projects.vercel.app/api/projetos") // Consumindo a API do servidor Node.js
+    fetch("https://portfolio-hqqg4ufui-mizaelbarretos-projects.vercel.app/api/projetos")
       .then((res) => res.json())
-      .then((data) => setProjects(data))
+      .then((data) => {
+        console.log("Dados recebidos:", data); // Verifique se os dados estão corretos
+        setProjects(data);
+      })
       .catch((error) => console.error("Erro ao buscar projetos:", error));
   }, []);
   
