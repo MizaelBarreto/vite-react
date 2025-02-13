@@ -1,11 +1,13 @@
 require("dotenv").config();
+const { Client } = require("pg");
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Configuração do Supabase usando as variáveis do .env
 const supabase = createClient(
@@ -30,6 +32,11 @@ app.get("/api/projetos", async (req, res) => {
     console.error("Erro inesperado ao buscar projetos:", error);
     res.status(500).send("Erro inesperado ao buscar projetos");
   }
+});
+
+// Rota de teste para verificar se o servidor está rodando
+app.get("/", (req, res) => {
+  res.send("Servidor rodando corretamente!");
 });
 
 // Inicia o servidor

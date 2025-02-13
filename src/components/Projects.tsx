@@ -11,12 +11,12 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Projeto[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projetos") // Consumindo a API do servidor Node.js
+    fetch("https://portfolio-hqqg4ufui-mizaelbarretos-projects.vercel.app") // Consumindo a API do servidor Node.js
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Erro ao buscar projetos:", error));
   }, []);
-
+  
   return (
     <section id="projects" className="projects">
       <h2 style={{ textAlign: "center" }}>Meus Projetos</h2>
