@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       </p>
 
       {/* Botão */}
-      <a href="/Curriculum Mizael Barreto 2025 (1).pdf" className="resume-button">Baixe Aqui meu currículum</a>
+      <a href="/Curriculum Mizael_Barreto (1).pdf" className="resume-button">Baixe Aqui meu currículum</a>
   
     </div>
   );
